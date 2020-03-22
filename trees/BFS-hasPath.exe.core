@@ -1,0 +1,19 @@
+[main] BFS-hasPath 1000 (0) exception: trapped!
+[main] BFS-hasPath 1000 (0) exception: code 0xC0000005 at 0x401472
+[main] BFS-hasPath 1000 (0) exception: ax 0x0 bx 0x0 cx 0x2 dx 0xA031630
+[main] BFS-hasPath 1000 (0) exception: si 0x8 di 0x3 bp 0x246FF00 sp 0x246FE80
+[main] BFS-hasPath 1000 (0) exception: exception is: STATUS_ACCESS_VIOLATION
+[main] BFS-hasPath 1000 (1) stack: Stack trace:
+[main] BFS-hasPath 1000 (0) stack: frame 0: sp = 0x246F890, pc = 0x6100A2C3
+[main] BFS-hasPath 1000 (0) stack: frame 1: sp = 0x246F8CC, pc = 0x76F5DD52
+[main] BFS-hasPath 1000 (0) stack: frame 2: sp = 0x246F8F0, pc = 0x76F5DD24
+[main] BFS-hasPath 1000 (0) stack: frame 3: sp = 0x246F9B8, pc = 0x76F4B9B6
+[main] BFS-hasPath 1000 (0) stack: frame 4: sp = 0x246FF00, pc = 0x61004402
+[main] BFS-hasPath 1000 (0) stack: frame 5: sp = 0x246FF48, pc = 0x61004420
+[main] BFS-hasPath 1000 (0) stack: frame 6: sp = 0x246FF54, pc = 0x41358E
+[main] BFS-hasPath 1000 (0) stack: frame 7: sp = 0x246FF64, pc = 0x40103A
+[main] BFS-hasPath 1000 (0) stack: frame 8: sp = 0x246FF80, pc = 0x752A8484
+[main] BFS-hasPath 1000 (0) stack: frame 9: sp = 0x246FF94, pc = 0x76F42EC0
+[main] BFS-hasPath 1000 (0) stack: frame 10: sp = 0x246FFDC, pc = 0x76F42E90
+[main] BFS-hasPath 1000 (0) stack: frame 11: sp = 0x246FFEC, pc = 0x0
+[main] BFS-hasPath 1000 (0) stack: End of stack trace
