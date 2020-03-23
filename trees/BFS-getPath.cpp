@@ -5,10 +5,10 @@
 //#include <bits/stdc++.h>
 using namespace std;
 
-void BFSgetPath(int ** arr,int n,bool * visited,int sv ,int end,vector<int>& path ){
+void BFSgetPath(int ** arr,int n,bool * visited,int sv ,int end ){
     // create a map to store conncetions
-    map <int , int> m;
-    
+    vector<pair <int ,int> > m;
+    vector<int>f;
     bool found=false;
     // create a queue
     queue <int> q;
@@ -34,7 +34,8 @@ void BFSgetPath(int ** arr,int n,bool * visited,int sv ,int end,vector<int>& pat
                                     // mark i as visited 
                                     visited[i]=true;
                                     if (i==end) found=true;
-                                    m.insert(pair<int,int>(cv,i));
+                                  //  cout<<"Adding "<<"<"<<cv<<","<<i<<">to map "<<endl;
+                                    m.push_back(pair<int,int>(cv,i));
                                     q.push(i);
 
                                 }
@@ -53,19 +54,30 @@ void BFSgetPath(int ** arr,int n,bool * visited,int sv ,int end,vector<int>& pat
     if(found){
 
                     int preVal;
-                    map<int,int> :: iterator it=m.end();
-                    it--;
-                    preVal=it->second;
-                    cout<<it->second<<" ";
+                    //vector<pair<int,int> > :: iterator it=m.end();
+                    
+                    preVal=m[m.size()-1].second;
+                    // cout<<m[i].second<<" ";
                    
-                    for (;it!=m.begin();it--){
-                        if (preVal=it->second){
-                            cout<<it->first<<" ";
-                            preVal=it->first;
+                    for (int i=m.size()-1;i>=0;i--){
+                        if (preVal==m[i].second){
+                            f.push_back(m[i].second);
+                            preVal=m[i].first;
                         }
+                       // cout<<"<"<<m[i].first<<","<<m[i].second<<">"<<endl;
+
+
                     }
-                    cout<<sv;
+                    f.push_back(preVal);
+   
+        // print the vector 
+        for (int i=0;i<f.size();i++) cout<<f[i]<<" ";
+   
+   
+   
     }
+
+    //
   
 }
 
@@ -112,13 +124,11 @@ int main(){
      bool exists=false;
       // end will only be checked if it exists
     if (end<n) exists=true;     
-     // get a vector 
-    vector <int> path;
-    vector <int>::iterator it;
+
 
     // make sure you pass it as refernece
    if (exists){
-        BFSgetPath(arr,n,visited,sv,end,path);
+        BFSgetPath(arr,n,visited,sv,end);
            
                 
             }
