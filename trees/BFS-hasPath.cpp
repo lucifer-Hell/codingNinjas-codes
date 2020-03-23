@@ -51,8 +51,11 @@ bool BFS(int ** arr,int n,bool * visited,int sv ,int end ){
 
 int main(){
     int e,n;
+    int V,E;
     // vertices edges
-    cin>>n>>e;
+    cin>>V>>E;
+    n=V;
+    e=E;
 
     // create adjacency matrix 
     int ** arr =new int * [n];
@@ -79,15 +82,16 @@ int main(){
 
     }
     int sv,dest;
-    cout <<"Origin :";cin>>sv;
-    cout<<"Destination:";cin>>dest;
+    cin>>sv;
+    cin>>dest;
 
     // print the bfs
-    if(BFS(arr,n,visited,sv,dest)) cout<<"Path Found";
-    else cout<<"Path cannot be found";
+    if(BFS(arr,n,visited,sv,dest)) cout<<"true";
+    else cout<<"false";
 
 
- 
+    delete []arr;
+    
     return 0;   
     
 }

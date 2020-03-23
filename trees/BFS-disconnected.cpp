@@ -69,7 +69,12 @@ void printBFS(int ** arr ,int n){
 int main(){
     int e,n;
     // vertices edges
-    cin>>n>>e;
+    int V,E;
+    // vertices edges
+    cin>>V>>E;
+    n=V;
+    e=E;
+
 
     // create adjacency matrix 
     int ** arr =new int * [n];
